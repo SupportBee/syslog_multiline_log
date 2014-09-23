@@ -10,7 +10,7 @@ class SyslogMultilineLog
     return @text if lines.size == 1
 
     lines.map.with_index do |line, i|
-      "[#{i + 1}/#{lines.count}] #{line}"
+      "[%0#{lines.count.to_s.size}d/#{lines.count}] #{line}" % [i+1]
     end.join("\n")
   end
 end
