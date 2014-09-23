@@ -1,6 +1,6 @@
 # SyslogMultilineLog
 
-TODO: Write a gem description
+Tags each line in a multiline log with numbers
 
 ## Installation
 
