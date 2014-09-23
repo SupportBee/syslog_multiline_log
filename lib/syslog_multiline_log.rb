@@ -6,6 +6,11 @@ class SyslogMultilineLog
   end
 
   def to_s
-    @text
+    lines = @text.split("\n")
+    return @text if lines.size == 1
+
+    lines.map.with_index do |line, i|
+      "[#{i + 1}/#{lines.count}] #{line}"
+    end.join("\n")
   end
 end
