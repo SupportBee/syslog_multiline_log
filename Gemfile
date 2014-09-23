@@ -5,3 +5,4 @@ gemspec
 
 gem 'rspec-core'
 gem 'rspec-expectations'
+gem 'pry'
