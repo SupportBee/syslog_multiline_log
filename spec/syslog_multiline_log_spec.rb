@@ -50,5 +50,15 @@ eos
 eos
       expect(syslog_multiline_log.to_s).to eq(string.rstrip)
     end
+
+    it 'ignores carriage returns' do
+      text = "First line in a log\r\nSecond line in the log"
+      syslog_multiline_log = SyslogMultilineLog.new(text.rstrip)
+      string = <<-eos
+[1/2] First line in a log
+[2/2] Second line in the log
+eos
+      expect(syslog_multiline_log.to_s).to eq(string.rstrip)
+    end
   end
 end

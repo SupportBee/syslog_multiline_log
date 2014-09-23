@@ -6,7 +6,7 @@ class SyslogMultilineLog
   end
 
   def to_s
-    lines = @text.split("\n")
+    lines = @text.split(/\r?\n/)
     return @text if lines.size == 1
 
     lines.map.with_index do |line, i|
